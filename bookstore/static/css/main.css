@@ -1,0 +1,473 @@
+/* Styles used on multiple pages */
+
+body {
+    max-width: 1160px;
+    margin: 0 auto;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1em;
+    color: #2b2132; 
+    background-image: url('/static/images/misc/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 10px;
+    padding: 18px 24px;
+    border-radius: 18px 18px 0 0;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.20);
+    position: relative;
+    z-index: 20;  
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 10px;
+    border-radius: 0 0 18px 18px;
+    background: linear-gradient(90deg, #f973a7, #fb7adf);
+    opacity: 0.95;
+}
+
+main {
+    display: flex;
+    margin: 25px 0 0 10px;
+    border-radius: 24px;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+    border-right: 1px solid rgba(15, 23, 42, 0.08);
+    background: radial-gradient(circle at top,
+                rgba(255, 255, 255, 0.96),
+                rgba(255, 255, 255, 0.85));
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #24152f; 
+}
+
+
+#siteTitle {
+    margin-left: 12px;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #24152f;
+}
+
+#leftHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#leftHeader img {
+    height: 100px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+    margin-right: 12px;
+}
+
+
+#searchBoxForm {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#searchBox {
+    height: 32px;
+    width: 260px;
+    padding: 4px 32px 4px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #2b2132;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#searchBox::placeholder {
+    color: rgba(148, 163, 184, 0.95);
+}
+
+#searchIcon {
+    margin-left: -28px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 18px;
+    margin-left: 40px;
+}
+
+.dropdownSelect {
+    width: 210px;
+    padding: 7px 5px;
+    background: linear-gradient(90deg, #f973a7, #fb7adf);
+    color: white;
+    text-align: center;
+    display: block;
+    border-radius: 999px;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 0.9rem;
+    box-shadow: 0 14px 28px rgba(248, 113, 171, 0.55);
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    min-width: 210px;
+    padding: 8px 0;
+    top: 40px;
+    left: 0;
+    z-index: 50;   
+    border-radius: 14px;
+    background: rgba(24, 24, 34, 0.96);
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownContent p {
+    margin: 0;
+    padding: 6px 16px;
+}
+
+.dropdownContent a {
+    color: #f9e3ff;
+    text-decoration: none;
+    font-size: 0.88rem;
+}
+
+.dropdownContent a:hover {
+    color: #f973a7;
+}
+
+#rightHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+#cartIcon img {
+    height: 28px;
+    width: auto;
+}
+
+#cartCount {
+    width: 110px;
+    margin: 8px 0 0 10px;
+    font-size: 0.82rem;
+    color: #4b3a58;
+}
+
+.loginButton {
+    background: #181827;
+    width: 64px;
+    height: 30px;
+    margin: 4px auto 0 4px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 999px;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 0.8rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.6);
+}
+
+.loginButton a {
+    color: #fdf2ff;
+    text-decoration: none;
+}
+
+.loginButton a:hover {
+    color: #f973a7;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    margin-left: 10px;
+    margin-top: 16px;
+    padding: 15px 24px;
+    font-size: 0.8em;
+    border-radius: 16px 16px 0 0;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    color: #4b3a58;
+}
+
+#footerLeft {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 0 0;
+    width: 340px;
+}
+
+#footerLeft a {
+    padding-top: 12px;
+    color: #f973a7;
+    text-decoration: none;
+}
+
+#footerLeft a:hover {
+    color: #fb7adf;
+}
+
+#footerRight {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    width: 80px;
+}
+
+#footerRight img {
+    filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.4));
+}
+
+#notFoundMessage {
+    color: #b91c1c;
+}
+
+.commandButton {
+    height: 30px;
+    width: 150px;
+    border-radius: 999px;
+    margin: 20px;
+    text-align: center;
+    line-height: 30px;
+    background: linear-gradient(90deg, #f973a7, #fb7adf);
+    font-size: smaller;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.submitButton {
+    height: 20px;
+    border-radius: 999px;
+    border: none;
+    margin: 6px 0 0 4px;
+    text-align: center;
+    background: linear-gradient(90deg, #f973a7, #fb7adf);
+    color: white;
+    font-size: 0.78rem;
+    text-decoration: none;
+}
+
+#mainLeft {
+    width: 550px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+#mainLeft p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #473656;
+}
+
+#mainLeft h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #2b1d35; 
+}
+
+.welcomeText {
+    max-width: 420px;
+}
+
+#mainRight {
+    max-width: 600px;
+    border-left: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 32px 0 32px 0;
+    background: rgba(248, 249, 255, 0.95);
+    text-align: center;
+}
+
+#mainRight h1 {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #2b1d35;
+}
+
+
+#categorySelections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category {
+    width: 260px;
+    margin-top: 24px;
+    text-align: center;
+    line-height: 40px;
+    color: #7c3aed; 
+    font-weight: 600;
+}
+
+.category a {
+    text-decoration: none;
+    color: #7c3aed;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.92rem;
+}
+
+.category a:hover {
+    color: #fb7adf;
+}
+
+.category img {
+    width: 160px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+}
+
+#catLeft {
+    width: 380px;
+    border-right: 1px solid rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+    gap: 18px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92),
+        rgba(248, 249, 255, 0.92)
+    );
+}
+
+.notSelectedCategory,
+.selectedCategory {
+    height: 34px;
+    width: 190px;
+    border-radius: 999px;
+    margin: 0;
+    text-align: center;
+    line-height: 34px;
+    font-size: 0.86rem;
+}
+
+.notSelectedCategory {
+    background: linear-gradient(90deg, #6366f1, #fb7adf);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.55);
+}
+
+.notSelectedCategory a {
+    color: white;
+    font-size: 0.86rem;
+    text-decoration: none;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.selectedCategory {
+    border: 2px solid rgba(251, 122, 223, 0.85);
+    background: white;
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+#catRight {
+    padding: 26px 26px 32px 30px;
+    box-shadow: inset 0 0 0 20px rgba(248, 249, 255, 0.9);
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(248, 249, 255, 0.96);
+}
+
+.book {
+    width: 350px;
+    margin: 18px 18px 24px 18px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    border-radius: 18px;
+    padding: 18px 18px 20px 18px;
+}
+
+.book img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+}
+
+.bookDetailBox {
+    margin: 4px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875em;
+}
+
+.bookTitle {
+    font-weight: 700;
+    color: #24152f;
+}
+
+.bookDetail {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #574364;
+}
+
+.bookPrice {
+    margin-top: 6px;
+    font-weight: 700;
+    color: #6366f1; 
+}
+
+.actionButton {
+    height: 22px;
+    width: 110px;
+    border-radius: 999px;
+    margin-top: 6px;
+    line-height: 22px;
+    text-align: center;
+    background: linear-gradient(90deg, #6366f1, #fb7adf);
+    color: white;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    box-shadow: 0 10px 26px rgba(99, 102, 241, 0.6);
+}
+
+.actionButton:hover {
+    filter: brightness(1.08);
+}

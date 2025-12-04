@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<main>
+    <section id="catLeft">
+        <h2 style="padding: 20px; color: #7c3aed;">Book Details</h2>
+        
+        <p class="notSelectedCategory">
+            {% if request.args.get('q') %}
+                <a href="{{ url_for('search', search=request.args.get('q')) }}">
+                    &larr; Back to Results
+                </a>
+            {% else %}
+                <a href="{{ url_for('category', category=book.categoryId) }}">
+                    &larr; Back to {{ book.categoryName }}
+                </a>
+            {% endif %}
+        </p>
+    </section>
+
+    <section id="catRight">
+        <div class='book' style="width: 100%; margin: 0;">
+            <div>
+                <img src="{{ url_for('static', filename='images/books/' ~ book.image) }}"
+                     alt="{{ book.title }}"
+                     style="width: 250px; height: auto;">
+            </div>
+
+            <div class='bookDetailBox' style="font-size: 1.1em; line-height: 1.6;">
+                <h1 style="margin-top:0; color: #2b2132;">{{ book.title }}</h1>
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Category:</strong> {{ book.categoryName }}</p>
+                <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+                <p class='bookPrice' style="font-size: 1.5em; margin: 15px 0;">
+                    ${{ "%.2f"|format(book.price) }}
+                </p>
+
+                <div style="margin-top: 30px;">
+                    <a class='actionButton' href='#' 
+                       style="width: auto; padding: 12px 30px; display: inline-block; margin-right: 15px;">
+                        Add to cart
+                    </a>
+    
+                    {% if book.readNow == 1 %}
+                        <a class='actionButton' href='#' 
+                           style="width: auto; padding: 12px 30px; display: inline-block;">
+                            Read Now
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

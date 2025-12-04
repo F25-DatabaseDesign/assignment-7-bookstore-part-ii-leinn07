@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<main style="display: flex; min-height: 80vh;">
+    <section id="catLeft">
+        <h2 style="padding: 20px 20px 10px 20px; color: #7c3aed; font-size: 2rem; margin-bottom: 0;">
+            Search Results
+        </h2>
+        
+        <p style="padding: 0 20px; font-size: 1.4rem; color: #64748b; margin-top: 0;">
+            for <span style="font-weight: 700; color: #2b2132; font-style: italic;">"{{ term }}"</span>
+        </p>
+    </section>
+
+    <section id="catRight" style="flex: 1; width: 100%;">
+        
+        {% if books | length == 0 %}
+            <div style="padding: 20px; width: 100%;">
+                <p style="font-size: 1.2rem;">No results found for "<strong>{{ term }}</strong>".</p>
+                <p style="font-size: 1.1rem; color: #666;">Please try checking your spelling or search for another term.</p>
+            </div>
+        {% else %}
+            {% for book in books %}
+                <div class='book'>
+                    <div>
+                        <a href="{{ url_for('book_detail', book_id=book.id, q=term) }}">
+                            <img src="{{ url_for('static', filename='images/books/' ~ book.image) }}"
+                                 alt="{{ book.title }}">
+                        </a>
+                    </div>
+        
+                    <div class='bookDetailBox'>
+                        <p class='bookTitle'>{{ book.title }}</p>
+                        <p class='bookDetail'>by {{ book.author }}</p>
+                        <p class='bookDetail'>ISBN: {{ book.isbn }}</p>
+                        <p class='bookPrice'>${{ "%.2f"|format(book.price) }}</p>
+    
+                        <a class='actionButton' href='#'>Add to cart</a>
+    
+                        {% if book.readNow == 1 %}
+                            <a class='actionButton' href='#'>Read Now</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </section>
+</main>
+{% endblock %}
